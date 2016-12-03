@@ -69,13 +69,13 @@ Sample 1:
 	#Importing fua
 	android = fua.SmartPhone.Android()
 	#Creating a SmartPhone Android device
-	android_ff_ua = android.Firefox
+	android_ff_ua = android.Firefox()
 	#Android Firefox UserAgent
 	
 Sample 2:
 
 	import fua,requests
-	osx_chrome_ua = fua.Desktop.macOS().Chrome
+	osx_chrome_ua = fua.Desktop.macOS().Chrome()
 	#If you print(osx_chrome_ua) , you will see the User Agent of Chrome in macOS
 	github_page = requests.get('https://github.com',headers={'User-Agent':osx_chrome_ua})
 	
