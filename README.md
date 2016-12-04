@@ -1,7 +1,7 @@
 # fua
-Fake User-Agent of many real devices
+Fake User-Agent of many real devices(about %80 of real devices)
 
-In many Python script,we need to change our User-Agent,due to webserivce security or etc. By fua you can change your User-Agent easily and fast. It supports :
+In many Python/Ruby script,we need to change our User-Agent,due to webserivce security or etc. By fua you can change your User-Agent easily and fast. It supports :
 
 	Smartphones :
 	
@@ -63,26 +63,33 @@ In many Python script,we need to change our User-Agent,due to webserivce securit
 	
 Usage:
 
-Sample 1:
+Sample for Ruby:
 
-	import fua
-	#Importing fua
+	require 'fua'
+	android_chrome_ua = Fua::SmartPhone::Android.new.Chrome
+	xboxOne_ua = Fua::Game_Consoles.new.Xbox_One
+	#And then use your User Agent string in your header of your requests.
+	
+Sample for Python:
+	
+	import fua,requests
+	osx_chrome_ua = fua.Desktop.macOS().Chrome()
+	#If you print(osx_chrome_ua) , you will see the User Agent of Chrome in macOS
+	github_page = requests.get('https://github.com',headers={'User-Agent':osx_chrome_ua})
+	#Another sample
 	android = fua.SmartPhone.Android()
 	#Creating a SmartPhone Android device
 	android_ff_ua = android.Firefox()
 	#Android Firefox UserAgent
 	
-Sample 2:
-
-	import fua,requests
-	osx_chrome_ua = fua.Desktop.macOS().Chrome()
-	#If you print(osx_chrome_ua) , you will see the User Agent of Chrome in macOS
-	github_page = requests.get('https://github.com',headers={'User-Agent':osx_chrome_ua})
-	
 	
 Installation:
 
+For Python:
+
 	pip install fua
-	
+For Ruby:
+
+	gem install fua
 	
 
