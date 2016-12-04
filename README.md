@@ -1,5 +1,10 @@
 # fua
+
+[![Gem Version](https://badge.fury.io/rb/fua.svg)](https://badge.fury.io/rb/fua)
+[![PyPI version](https://badge.fury.io/py/fua.svg)](https://badge.fury.io/py/fua)
+
 Fake User-Agent of many real devices(about %80 of real devices)
+
 
 In many Python/Ruby script,we need to change our User-Agent,due to webserivce security or etc. By fua you can change your User-Agent easily and fast. It supports :
 
